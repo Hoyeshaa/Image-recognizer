@@ -1,0 +1,10 @@
+body{
+    color: white;
+    background-color: pink;
+}
+#camera{
+    border: 2px dashed black;
+}
+#iden_obj , #object , #accuracy{
+    color: blue;
+}
