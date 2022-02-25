@@ -14,3 +14,20 @@ function capture(){
 }
 console.log("ml5version",ml5.version);
 var imports = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/9uqnePEmO/model.json',modelLoaded)
+function modelLoaded(){
+  console.log("modelLoaded");
+}
+function check(){
+  Img = document.getElementById("capture_img");
+  imports.classify(Img , gotResults);
+}
+function gotResults(error , results){
+  if(error){
+    console.log(error);
+  }
+  else{
+    console.log(results);
+    document.getElementById("object").innerHTML = results[0].label;
+    document.getElementById("accuracy").innerHTML = results[0].confidence.toFixed(2);
+  }
+}
